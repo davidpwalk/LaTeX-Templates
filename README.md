@@ -1,5 +1,5 @@
 # LaTeX-Templates
-LaTeX template for the ETH spectroscopy laboratory course of the 5. semester
+LaTeX templates for different ETH labroratory courses and the UZH CHE311 multiple step synthesis labroratory course.
 
 Setup up templates:
   -Download folder with desired template (use e.g. https://download-directory.github.io/)
