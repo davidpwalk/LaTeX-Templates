@@ -1,0 +1,66 @@
+\documentclass{aocp2}
+
+\title{}
+
+\author{}{}
+
+\assistant{}{}
+
+\compoundImage{
+    \includegraphics{Figs/AOCP2._TP.eps}
+}
+
+% Abstract
+\abstract{}
+
+\begin{document}
+  % Print the preformatted title
+  \maketitle
+
+  \begin{multicols}{2}
+  \raggedcolumns
+    \section*{Introduction}
+     \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{Figs/MOdiagramm.jpeg}
+        \caption{Molecular orbital diagram of the Mo\bond{quadruple}Mo bond present in the [Mo$_2$Cl$_8$]$^{4-}$ anion \autocite{MOdiagram}}
+        \label{MOdiagram}
+    \end{figure}
+    
+    \section*{Results and Discussion}
+
+    \section*{Experimental}
+
+    \subsubsection*{Melting Point}
+    \begin{table}[H]
+    \centering
+    \begin{tabular}{ll}
+    literature value\cite{MP_literature} & 178--181$^\circ$C \\
+    measured value & 180--184$^\circ$C \\
+    \end{tabular}
+    \end{table}
+    
+    \subsubsection*{IR Spectroscopy}
+    \begin{table}[H]
+    \caption{The measured IR values compared to the literature values}
+    \centering
+        \begin{tabular}{C{0.2\linewidth}C{0.2\linewidth}C{0.45\linewidth}}
+        \hline
+        $\nu$ [cm$^{-1}$] & $\nu_{\textrm{lit}}$\cite{IR} [cm$^{-1}$] & Interpretation\\
+        \hline
+        3000 & 2000 & literature is lying! \\
+        \hline
+        \end{tabular}
+    \end{table}
+    
+    \section*{Conclusion}
+    
+  \end{multicols}
+
+\printbibliography
+\appendix
+  \section*{Appendix}
+
+\includepdf[pages=-]{Figs/}
+
+\end{document}
