@@ -1,7 +1,7 @@
 # LaTeX-Templates
 LaTeX templates for different ETH labroratory courses and the UZH CHE311 multiple step synthesis labroratory course.
 
-Setup up templates:
+Setup templates:
   -Download folder with desired template (use e.g. https://download-directory.github.io/)
   -Go to Overleaf, click on "New Project" and then "Upload Project", upload the .zip file you just downloaded
 
