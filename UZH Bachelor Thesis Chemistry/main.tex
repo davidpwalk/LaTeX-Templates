@@ -1,0 +1,35 @@
+\documentclass{UZHBT}
+
+\title{This is my super cool Title and bit longer title}
+\abstract{}
+
+\author{Annina Weber}
+\supervisor{Pauline Pfister}
+\professor{Prof. Dr. Michal Jur\'i\u{c}ek}
+
+\place{Zurich}
+
+\begin{document}
+\maketitle
+\newpage
+
+\section*{Introduction}
+
+\section*{Experimental}
+
+\section*{Results and Discussion}
+
+\section*{Conclusion}
+
+\printbibliography
+
+\appendix
+  \section*{Appendix}
+  \renewcommand\thefigure{A\arabic{figure}} % use this if sections should not be numbered
+  \renewcommand\thetable{A\arabic{table}} % use this if sections should not be numbered
+  \renewcommand\theequation{A\arabic{equation}} % use this if sections should not be numbered
+  \setcounter{figure}{0}
+  \setcounter{table}{0}
+  \setcounter{equation}{0}
+\subfile{Appendix}
+\end{document}
