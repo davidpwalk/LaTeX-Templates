@@ -1,0 +1,43 @@
+\documentclass{ETHProject}
+
+\title{}
+
+\author{Your Name}
+\supervisor{}
+\professor{}
+
+\place{Zurich}
+
+\begin{document}
+\maketitle
+
+\newpage
+\section*{Abstract} \markboth{}{Abstract}
+\subfile{Sections/1Abstract}
+
+\section*{Introduction} \markboth{}{Introduction}
+\subfile{Sections/2Introduction}
+
+\section*{Experimental} \markboth{}{Experimental}
+\subfile{Sections/3Experimental}
+
+\section*{Results and Discussion} \markboth{}{Results and Discussion}
+\subfile{Sections/4Results&Discussion}
+
+\section*{Conclusions} \markboth{}{Conclusions}
+\subfile{Sections/5Conclusion}
+
+\markboth{}{References}
+\printbibliography
+\markboth{}{References}
+
+\appendix
+  \section*{Appendix} 
+  \renewcommand\thefigure{A\arabic{figure}}
+  \renewcommand\thetable{A\arabic{table}}
+  \renewcommand\theequation{A\arabic{equation}}
+  \setcounter{figure}{0}
+  \setcounter{table}{0}
+  \setcounter{equation}{0}
+\subfile{Sections/6Appendix}
+\end{document}
