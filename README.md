@@ -1,5 +1,5 @@
 # LaTeX-Templates
-LaTeX templates for different ETH labroratory courses and the UZH CHE311 multiple step synthesis labroratory course.
+LaTeX templates for different ETH labroratory courses, Master's thesis and the UZH CHE311 multiple step synthesis labroratory course .
 
 ## Setup templates
 - Download folder with desired template (use e.g. https://download-directory.github.io/)
