@@ -10,7 +10,8 @@ LaTeX templates for different ETH labroratory courses, Master's thesis and the U
 - `\lilyref{label}` is a new referencing type (e.g. "(see Figure 1)")
 - new environment `Scheme` adds the option to create schemes instead of figures (use `\begin{scheme}` instead of `\begin{figure}`) This is only really useful for AOCPII reports.
 - new column type added for tables `C{width}` makes columns which are centered with adjustable width (e.g. `\begin{tabular}{C{0.1\linewidth}}`...)
-- `\labeledgraphic{width}{filename}{label}` adds the option to add figures with a label on the top left, which is generated via tikz. This is used for cases where two or more plots are added to one figure, so they can be labeled and refered to as Fig. 4a, b, etc.
+- New environment `Scheme` adds the option to create schemes instead of figures (use `\begin{scheme}` instead of `\begin{figure}`) This is only really useful for AOCPII reports.
+- New column types added for tables `C{width}`, `L{width}` and `R{width}` makes columns which are centered/raggedright/raggedleft with adjustable width (e.g. `\begin{tabular}{C{0.1\linewidth}}`...)
 
 A longer description of the added stuff is found in the `Guide.pdf`.
 
