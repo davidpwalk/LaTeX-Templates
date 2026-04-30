@@ -12,19 +12,32 @@
 \maketitle
 
 \newpage
-\section*{Abstract} \markboth{}{Abstract}
+\clearpage
+\pagenumbering{roman}
+\setcounter{page}{1}
+\thispagestyle{abstract_toc}
 \subfile{Sections/1Abstract}
 
-\section*{Introduction} \markboth{}{Introduction}
+\clearpage
+\thispagestyle{abstract_toc}
+{
+  \hypersetup{linkcolor=black}
+  \tableofcontents
+}
+
+\clearpage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\section{Introduction} \markboth{}{Introduction}
 \subfile{Sections/2Introduction}
 
-\section*{Experimental} \markboth{}{Experimental}
+\section{Experimental} \markboth{}{Experimental}
 \subfile{Sections/3Experimental}
 
-\section*{Results and Discussion} \markboth{}{Results and Discussion}
+\section{Results and Discussion} \markboth{}{Results and Discussion}
 \subfile{Sections/4Results&Discussion}
 
-\section*{Conclusions} \markboth{}{Conclusions}
+\section{Conclusion \& Outlook} \markboth{}{Conclusion \& Outlook}
 \subfile{Sections/5Conclusion}
 
 \markboth{}{References}
@@ -32,12 +45,12 @@
 \markboth{}{References}
 
 \appendix
-  \section*{Appendix} 
-  \renewcommand\thefigure{A\arabic{figure}}
-  \renewcommand\thetable{A\arabic{table}}
-  \renewcommand\theequation{A\arabic{equation}}
-  \setcounter{figure}{0}
-  \setcounter{table}{0}
-  \setcounter{equation}{0}
+    \section{Appendix} 
+    \renewcommand\thefigure{A\arabic{figure}}
+    \renewcommand\thetable{A\arabic{table}}
+    \renewcommand\theequation{A\arabic{equation}}
+    \setcounter{figure}{0}
+    \setcounter{table}{0}
+    \setcounter{equation}{0}
 \subfile{Sections/6Appendix}
 \end{document}

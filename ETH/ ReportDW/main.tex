@@ -1,0 +1,51 @@
+\documentclass{reportDW}
+
+\title{}
+\abstract{}
+
+\semester{Autumn Semester 2024}
+\labcourse{Praktikum Allgemeine Chemie}
+
+\experiment{}
+\group{9}
+
+\author{Name 1}{email1@email.ch}
+\coauthor{Name 2}{email2@email.ch}
+
+\assistant{Max Musterman}{maxmust@ethz.ch}
+
+\place{Zurich}
+
+\begin{document}
+\maketitle
+\newpage
+
+\section*{Introduction}
+
+
+\section*{Experimental}
+
+\section*{Results and Discussion}
+
+\section*{Conclusion}
+
+\printbibliography
+
+\appendix
+  \section*{Appendix}
+  \renewcommand\thefigure{A\arabic{figure}} % use this if sections should not be numbered
+  \renewcommand\thetable{A\arabic{table}} % use this if sections should not be numbered
+  \renewcommand\theequation{A\arabic{equation}} % use this if sections should not be numbered
+  \setcounter{figure}{0}
+  \setcounter{table}{0}
+  \setcounter{equation}{0}
+
+
+%---- Labjoural --------------------------------------------------------------------------------------%
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\linewidth]{}
+    \caption{Labjournal, page 1}
+    \label{fig:app:labjournal}
+\end{figure}
+\end{document}

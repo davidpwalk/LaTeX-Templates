@@ -10,6 +10,13 @@
 \usepackage{multicol}
 \usepackage[version=4]{mhchem} % Used for chemical formulas
 \usepackage[hidelinks]{hyperref}
+% \usepackage{hyperref}
+% \hypersetup{
+%   colorlinks=true,
+%   linkcolor=blue,
+%   citecolor=blue,
+%   urlcolor=blue
+% }
 \usepackage[nameinlink]{cleveref}
 \usepackage{float}
 \usepackage{tcolorbox}
@@ -27,7 +34,6 @@
 \usepackage[top=1in, bottom=1in, right=1in, left=1in]{geometry}
 \usepackage{newfloat}
 \usepackage{listings} % Package for inserting code
-\usepackage{sectsty} % adds options to change section titles appearance
 \usepackage{chngcntr} 
 \usepackage[leftline=false, rightline=false,innerleftmargin=0, innerrightmargin=0]{mdframed}
 \usepackage{pdfpages}
@@ -46,6 +52,7 @@
 \usepackage{standalone} % so tikz figures can be put in a standalone file
 \usepackage{xspace} % used for cases where custom commands like \invcm are added and there should be a space behind it
 \usepackage{titlesec} % used to change behaviour of different sections
+\usepackage{braket} % used to add QM brackets
 
 % Changing font to Utopia / fourier (https://www.overleaf.com/learn/latex/Font_typefaces)
 \usepackage{fourier}
@@ -61,7 +68,6 @@
 \linespread{1.25}
 \renewcommand{\arraystretch}{1.25}
 
-% TODO: decide how I want to format section titles
 % Section with horizontal line
 \titleformat{\section}
   {\normalfont\LARGE\bfseries} % formatting
@@ -71,8 +77,8 @@
 
 % Add a horizontal line under \section
 \titleformat{\section}[block]
-  {\normalfont\LARGE\bfseries}{\thesection}{1em}{}
-  [\vspace{0.5ex}\titlerule] % horizontal rule
+  {\normalfont\huge\bfseries}{\thesection}{1em}{}
+  % [\vspace{0.5ex}\titlerule] % horizontal rule
 
 % Subsection formatting
 \titleformat{\subsection}
@@ -98,7 +104,7 @@
 \creflabelformat{equation}{#2\textup{#1}#3}
 
 % Adding referencing style "lilyref" for equations to reference them like this: (see Equation X)
-\newcommand\lilyref[1]{(see \autoref{#1})} 
+\newcommand\lilyref[1]{(see \Cref{#1})} 
 
 % New Column type C (Centering + define the width)
 \newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
@@ -108,17 +114,45 @@
 % No indent in new paragraphs
 \setlength{\parindent}{0pt}
 
+% Needed for labeled subfigs
+\newcounter{subfig}
+\renewcommand{\thesubfig}{\alph{subfig}}
+
+
+
+\makeatletter
+\@addtoreset{subfig}{figure}
+\makeatother
+
+\makeatletter
+\renewcommand{\p@subfig}{%
+  \the\numexpr\value{figure}+1\relax
+}
+\makeatother
+
 % New command to add labeled graphics
 \newcommand{\labeledgraphic}[3]{%
   % #1 = width
   % #2 = filename
-  % #3 = label (a, b, ...)
+  % #3 = label name
+  \refstepcounter{subfig}%
   \begin{tikzpicture}
     \node[anchor=south west, inner sep=0] (img)
       {\includegraphics[width=#1]{#2}};
-    \node[anchor=north west] at (img.north west) {\textbf{#3}};
+    \node[anchor=north west] at (img.north west)
+      {\textbf{\large\thesubfig}};
   \end{tikzpicture}%
+  \label{#3}%
 }
+
+
+\Crefname{subfig}{Fig.}{Figs.}
+
+% So the section title is displayed at the top of the page
+\renewcommand{\sectionmark}[1]{%
+  \markright{#1}
+}
+\renewcommand{\subsectionmark}[1]{}
 
 % Header and footer settings in document
 % TODO: make section title appear top left of page
@@ -129,13 +163,20 @@
     \fancyhead[L]{}
     % \fancyhead[R]{\vspace{-13pt}\includegraphics[width=69pt]{Figures/eth_logo_kurz_pos.png}}
     \fancyhead[R]{\nouppercase{\rightmark}}
-    \fancyfoot[LE, RO]{\thepage}
+    \fancyfoot[LO, RE]{\thepage}
 }
 \pagestyle{main}
 
 % Header settings on title page
 \fancypagestyle{titlepage}{
     \fancyhf{}
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0pt}
+}
+
+\fancypagestyle{abstract_toc}{
+    \fancyhf{}
+    \fancyfoot[RE, LO]{\thepage}
     \renewcommand{\headrulewidth}{0pt}
     \renewcommand{\footrulewidth}{0pt}
 }
@@ -182,7 +223,7 @@
 \renewcommand{\maketitle}{
     \thispagestyle{titlepage}
     \begin{center}
-        \includegraphics[width=0.55\linewidth]{Figures/eth_logo_kurz_pos.png} \\
+        \includegraphics[width=0.55\linewidth]{Figures/eth_logo_kurz_pos.pdf} \\
         \vspace*{.5cm}
         \specialrule{.2em}{.1em}{.1em} 
         \vspace{0.2cm}
